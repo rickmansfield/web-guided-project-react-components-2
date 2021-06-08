@@ -17,6 +17,16 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('')
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
+  const changeStatus = id => {
+    const newFriends = friends.map(friend => {
+      if (friend.id === id) {
+        return {...friend, married: !friend.married}
+      } else {
+        return friend
+      }
+    })
+    setFriends(newFriends)
+  }
 
   // STRETCH - Make a helper function that returns
   // a filtered array of friends data (filtering by search term)
@@ -27,7 +37,7 @@ export default function App() {
       {/* STRETCH - Changes to the input should update the search term */}
 
       {/* 👉 7- Render the FriendsList component */}
-      <FriendsList friends={friends} />
+      <FriendsList friends={friends} changeStatus={changeStatus} />
       {/* What prop/props does FriendsList need? */}
     </div>
   )
