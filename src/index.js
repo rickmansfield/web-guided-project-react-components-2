@@ -1,5 +1,5 @@
 // Importing React libs from node_modules folder
-import React from 'react'
+import React from 'react';
 import { render } from 'react-dom'
 
 // Importing the styles - the bundler does some magic!
