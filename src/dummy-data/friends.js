@@ -1,6 +1,7 @@
-import { v4 as uuid } from 'uuid'
+import { v4 as uuid } from 'uuid';
 
-export const hello = 'world'
+export const hello = 'world';
+export const goodbye = 'friend';
 
 export default [
   {
