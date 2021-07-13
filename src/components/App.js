@@ -31,7 +31,10 @@ const [search, setSearch] = useState('');
       //otherwise return the friend unchanged. 
       if (friend.id === id){
         return {...friend, married: !friend.married};
+      } else {
+        return friend;
       }
+      // return friend.id === id ? {...friend, married: !friend.married} : friend;
 
     }));
   }
@@ -43,9 +46,11 @@ const [search, setSearch] = useState('');
     <div className='app-friends container'>
       {/* 👉 6- Render the Search component */}
       {/* STRETCH - Changes to the input should update the search term */}
-
+      <Search />
       {/* 👉 7- Render the FriendsList component */}
       {/* What prop/props does FriendsList need? */}
+      <FriendsList friends={myFriends} changeStatusFunc={changeStatus}/>
+      {/* list comes from FriendsList.js line 5 */}
     </div>
   )
 }
