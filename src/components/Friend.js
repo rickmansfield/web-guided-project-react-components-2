@@ -19,6 +19,11 @@ export default function Friend(props) {
           <div>Likes:
             <ul>
               {/* 👉 3- Loop over the friend's hobbies and generate <li/> elements as you go */}
+              {
+                friendDetails.hobbies.map((hobb) => {
+                  return <li key={hobb}>{hobb}</li>
+                })
+              }
             </ul>
           </div>
         </div>
